@@ -2,14 +2,15 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
-    compileSdk 31
+    compileSdkVersion rootProject.ext.compileSdk
 
     defaultConfig {
-        minSdk 23
-        targetSdk 31
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

@@ -3,13 +3,12 @@
 buildscript {
 
     ext {
-        compileSdk = 23
-        buildTools = '28.0.3'
+        compileSdk = 33
         minSdk = 23
-        targetSdk = 31
+        targetSdk = 33
 
         /*https://blog.jetbrains.com/kotlin/category/releases/*/
-        kotlinVersion = '1.6.10'
+        kotlinVersion = '1.6.21'
         /*https://github.com/Kotlin/kotlinx.coroutines/releases*/
         coroutinesVersion = '1.6.0'
         kotlinDep = [
@@ -92,7 +91,7 @@ buildscript {
     }
 
     dependencies {
-        classpath androidDependencies.gradlePlugin
+        classpath 'com.android.tools.build:gradle:7.4.2'
         classpath kotlinDep.gradlePlugin
     }
 }
