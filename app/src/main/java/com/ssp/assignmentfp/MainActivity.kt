@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         //Decide Activity based on authentication if any
         startActivity(Intent(this, FeatureOneActivity::class.java))
+        finish()
     }
 }

@@ -2,6 +2,7 @@ package com.ssp.feature_one.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -36,6 +37,10 @@ class FeatureOneActivity : AppCompatActivity() {
     private fun observeViewModel() {
         viewModel.posts.observe(this) { posts ->
             adapter.setPosts(posts)
+        }
+
+        viewModel.progress.observe(this) {
+            binding.progress.visibility = if (it) View.VISIBLE else View.GONE
         }
     }
 

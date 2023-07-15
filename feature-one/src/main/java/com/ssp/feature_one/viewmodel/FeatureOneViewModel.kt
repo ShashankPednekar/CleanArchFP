@@ -17,10 +17,15 @@ class FeatureOneViewModel @Inject constructor(
     private val _posts = MutableLiveData<List<Post>>()
     val posts: LiveData<List<Post>> = _posts
 
+    private val _progress = MutableLiveData<Boolean>()
+    val progress: LiveData<Boolean> = _progress
+
     fun fetchPhotos() {
         viewModelScope.launch {
+            _progress.value = true
             val response = photosRepository.fetchPhotoDetails()
             _posts.value = response
+            _progress.value = false
         }
     }
 }
