@@ -46,6 +46,7 @@ class FeatureOneActivity : AppCompatActivity() {
 
     private fun setAdapter() {
         adapter.listener = {
+            //If we want to persist data then we should use Room and send post id instead of object
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("post", it)
             startActivity(intent)

@@ -22,6 +22,7 @@ class DetailActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
         setContentView(binding.root)
 
+        //If we want to persist data then we should use Room and send post id instead of object
         val post: Post? = intent?.getParcelableExtra("post") as? Post
         post?.let {
             binding.post = it
