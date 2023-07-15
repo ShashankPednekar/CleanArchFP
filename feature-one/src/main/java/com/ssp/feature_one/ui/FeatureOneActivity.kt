@@ -1,4 +1,4 @@
-package com.ssp.feature_one
+package com.ssp.feature_one.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ssp.feature_one">
+    package="com.ssp.feature_one" >
 
     <application>
         <activity
-            android:name="com.ssp.feature_one.FeatureOneActivity"
+            android:name=".ui.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.FeatureOneActivity"
             android:exported="false" />
     </application>
 

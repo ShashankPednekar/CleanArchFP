@@ -2,12 +2,9 @@ package com.ssp.assignmentfp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.ssp.assignmentfp.di.DaggerAppComponentProvider
-import com.ssp.core.ImageLoader
-import com.ssp.feature_one.FeatureOneActivity
-import javax.inject.Inject
+import com.ssp.feature_one.ui.FeatureOneActivity
 
 class MainActivity : AppCompatActivity() {
 
