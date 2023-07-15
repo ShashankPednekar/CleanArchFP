@@ -3,6 +3,7 @@ package com.ssp.common_ui.imageloader
 import android.content.Context
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
+import com.ssp.common_ui.R
 
 class ImageLoaderImpl constructor(
     private val context: Context
@@ -23,6 +24,9 @@ class ImageLoaderImpl constructor(
     ) {
         picasso
             .load(imageUrl)
+            .placeholder(R.drawable.ic_loading)
+            .centerInside()
+            .fit()
             .into(imageView)
     }
 }
