@@ -7,6 +7,7 @@ import com.ssp.core.ImageLoader
 import com.ssp.feature_one.R
 import com.ssp.feature_one.data.Post
 import com.ssp.feature_one.databinding.ActivityDetailBinding
+import com.ssp.feature_one.di.FeatureOneDaggerProvider
 import javax.inject.Inject
 
 class DetailActivity : AppCompatActivity() {
@@ -17,9 +18,9 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
-
+        FeatureOneDaggerProvider.component.inject(this)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
+        setContentView(binding.root)
 
         val post: Post? = intent?.getParcelableExtra("post") as? Post
         post?.let {
