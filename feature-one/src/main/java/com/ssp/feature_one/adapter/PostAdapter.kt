@@ -11,6 +11,8 @@ import javax.inject.Inject
 class PostAdapter @Inject constructor(
     private val imageLoader: ImageLoader
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+    var listener: ((Post) -> Unit)? = null
+
     private val posts: MutableList<Post> = mutableListOf()
 
     fun setPosts(posts: List<Post>) {
@@ -36,6 +38,15 @@ class PostAdapter @Inject constructor(
 
     inner class ViewHolder(private val binding: ItemPostBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener?.invoke(posts[position])
+                }
+            }
+        }
 
         fun bind(post: Post) {
             binding.post = post

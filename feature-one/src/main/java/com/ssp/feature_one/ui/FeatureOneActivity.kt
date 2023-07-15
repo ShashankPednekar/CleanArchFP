@@ -1,9 +1,9 @@
 package com.ssp.feature_one.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ssp.feature_one.adapter.PostAdapter
@@ -40,6 +40,11 @@ class FeatureOneActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
+        adapter.listener = {
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("post", it)
+            startActivity(intent)
+        }
         binding.rvPhotos.layoutManager = LinearLayoutManager(this)
         binding.rvPhotos.adapter = adapter
     }

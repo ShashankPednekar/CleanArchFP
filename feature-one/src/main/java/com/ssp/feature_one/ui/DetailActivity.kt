@@ -21,7 +21,7 @@ class DetailActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
 
-        val post: Post? = intent?.getSerializableExtra("post") as? Post
+        val post: Post? = intent?.getParcelableExtra("post") as? Post
         post?.let {
             binding.post = it
             imageLoader.loadImage(post.url, binding.ivImage)
